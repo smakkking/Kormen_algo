@@ -4,7 +4,7 @@ using namespace std;
 
 namespace basic_merge_sort
 {
-    void merge(vector<int> &A, int p, int q, int r)
+    void merge(vector<int> &A, int p, int q, int r) // O(N)
     {
         int n1 = q - p + 1, n2 = r - q;
         vector<int> L(n1), R(n2);
@@ -22,7 +22,7 @@ namespace basic_merge_sort
                 A[k] = R[j++];
     }
 
-    void sort(vector<int> &A, int p, int r)
+    void sort(vector<int> &A, int p, int r) // O(N*lgN)
     {
         if (p < r)
         {
@@ -38,7 +38,7 @@ namespace invertions
 {
     int count = 0;
 
-    void merge(vector<int> &A, int p, int q, int r)
+    void merge(vector<int> &A, int p, int q, int r) // O(N)
     {
         int n1 = q - p + 1, n2 = r - q;
         vector<int> L(n1), R(n2);
@@ -60,16 +60,15 @@ namespace invertions
                 count += abs(q + j + 1 - k);
                 A[k] = R[j++];
             }
-        //cout << count;
     }
 
-    void sort(vector<int> &A, int p, int r)
+    void calc(vector<int> &A, int p, int r) // O(N*lgN)
     {
         if (p < r)
         {
             int q = (p + r) / 2;
-            sort(A, p, q);
-            sort(A, q + 1, r);
+            calc(A, p, q);
+            calc(A, q + 1, r);
             merge(A, p, q, r);
         }
     }
@@ -78,7 +77,7 @@ namespace invertions
     {
         vector<int> S = A;
         count = 0;
-        sort(S, 0, S.size() - 1);
+        calc(S, 0, S.size() - 1);
         return count / 2;
     }
 }
@@ -91,7 +90,7 @@ void show_vector(const vector<int> a)
          << endl;
 }
 
-void insert_sort(vector<int> &A)
+void insert_sort(vector<int> &A) // best - O(N), worst - O(N^2)
 {
     for (int j = 1; j < A.size(); j++)
     {
@@ -104,7 +103,7 @@ void insert_sort(vector<int> &A)
     }
 }
 
-void choose_sort(vector<int> &A)
+void choose_sort(vector<int> &A) // best - O(N), worst - O(N^2)
 {
     for (int i = 0; i < A.size() - 1; i++)
     {
@@ -120,7 +119,7 @@ void choose_sort(vector<int> &A)
     }
 }
 
-int lineal_search(const vector<int> A, int value)
+int lineal_search(const vector<int> A, int value) // O(N*lgN)
 {
     for (int i = 0; i < A.size(); i++)
         if (A[i] == value)
@@ -129,7 +128,7 @@ int lineal_search(const vector<int> A, int value)
     return 0;
 }
 
-int binary_find(const vector<int> A, int p, int r, int value)
+int binary_find(const vector<int> A, int p, int r, int value) // O(N*lgN)
 {
     if (r < p)
         return -1;
@@ -155,7 +154,7 @@ bool task237(vector<int> &A, int x)
     return false;
 }
 
-void bubble_sort(vector<int> &A)
+void bubble_sort(vector<int> &A) // O(N^2)
 {
     for (int i = 0; i < A.size() - 1; i++)
         for (int j = A.size() - 1; j >= i + 1; j--)
