@@ -1,4 +1,6 @@
 /Cormen_Solutions.pdf
 .vscode/
 /ch4
+/ch2
+/ch5
 !ch?.cpp

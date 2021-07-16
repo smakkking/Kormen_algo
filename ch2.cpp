@@ -119,16 +119,16 @@ void choose_sort(vector<int> &A) // best - O(N), worst - O(N^2)
     }
 }
 
-int lineal_search(const vector<int> A, int value) // O(N*lgN)
+int lineal_search(const vector<int> A, int value) // O(N)
 {
     for (int i = 0; i < A.size(); i++)
         if (A[i] == value)
             return i;
 
-    return 0;
+    return -1;
 }
 
-int binary_find(const vector<int> A, int p, int r, int value) // O(N*lgN)
+int binary_find(const vector<int> A, int p, int r, int value) // O(lgN)
 {
     if (r < p)
         return -1;
