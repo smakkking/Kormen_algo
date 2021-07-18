@@ -65,9 +65,50 @@ void task531(vector<int> &A)
         swap(A[i], A[rand_ab(0, i)]);
 }
 
+void morris_counter()
+{
+    random_device rd{}; // use to seed the rng
+    mt19937 rng{rd()};  // rng
+
+    int i = 0, counter = 0;
+    const int N = 9;
+    vector<int> V; //= {0, 1, 2, 4, 8, 16, 32, 64, 128, 256};
+
+    for (int i = 0; i < N + 1; i++)
+        V.push_back(100 * i);
+
+    while (i < N)
+    {
+        bernoulli_distribution d(double(1) / (V[i + 1] - V[i]));
+        i += d(rng);
+        counter++;
+    }
+
+    cout << "real number - " << counter << endl
+         << "imagine number - " << V[N] << endl;
+}
+
+int random_search(const vector<int> V, int value)
+{
+    vector<bool> checked(V.size());
+    for (int i = 0; i < V.size(); i++)
+        checked[i] = false;
+
+    int all = 0;
+
+    while (all < V.size())
+    {
+        int idx = rand_ab(0, V.size() - 1);
+        if (V[idx] == value)
+            return idx;
+        else if (!checked[idx])
+            all++;
+        else
+            checked[idx] = true;
+    }
+}
+
 int main()
 {
-    vector<int> T = {1, 2, 3, 4, 5};
-    task531(T);
-    show_vector(T);
+    return 0;
 }
