@@ -106,6 +106,7 @@ int random_search(const vector<int> V, int value)
         else
             checked[idx] = true;
     }
+    return -1;
 }
 
 int main()
