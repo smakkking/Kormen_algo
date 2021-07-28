@@ -1,5 +1,7 @@
 #include <random>
 #include <iostream>
+#include "vector_use.cpp"
+
 using namespace std;
 
 int generate_bern_01(std::mt19937 &rng, std::bernoulli_distribution &d, double p)
@@ -36,26 +38,11 @@ void task512()
          << "1 - " << count1 << endl;
 }
 
-int rand_ab(int a, int b)
-{
-    if (a > b)
-        return -1;
-
-    return a + rand() % (b - a + 1);
-}
-
 void randomize_in_place(vector<int> &A)
 {
     srand(time(NULL));
     for (int i = 0; i < A.size(); i++)
         swap(A[i], A[rand_ab(i, A.size() - 1)]);
-}
-
-void show_vector(const vector<int> a)
-{
-    for (vector<int>::const_iterator it = a.begin(); it != a.end(); ++it)
-        cout << *it << " ";
-    cout << endl;
 }
 
 void task531(vector<int> &A)

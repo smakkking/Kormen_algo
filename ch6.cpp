@@ -1,17 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <iterator>
+#include "vector_use.cpp"
 
 using namespace std;
 
 int sort_op_counter = 0;
-
-void show_vector(const vector<int> a)
-{
-    for (vector<int>::const_iterator it = a.begin(); it != a.end(); ++it)
-        cout << *it << " ";
-    cout << endl;
-}
 
 int parent(int idx)
 {

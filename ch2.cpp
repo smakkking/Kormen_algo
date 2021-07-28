@@ -1,5 +1,7 @@
 #include <vector>
 #include <iostream>
+#include "vector_use.cpp"
+
 using namespace std;
 
 namespace basic_merge_sort
@@ -80,14 +82,6 @@ namespace invertions
         calc(S, 0, S.size() - 1);
         return count / 2;
     }
-}
-
-void show_vector(const vector<int> a)
-{
-    for (vector<int>::const_iterator it = a.begin(); it != a.end(); ++it)
-        cout << *it << " ";
-    cout << endl
-         << endl;
 }
 
 void insert_sort(vector<int> &A) // best - O(N), worst - O(N^2)

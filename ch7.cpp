@@ -1,15 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <ch5.cpp>
+#include "vector_use.cpp"
 
 using namespace std;
-
-void show_vector(const vector<int> a)
-{
-    for (vector<int>::const_iterator it = a.begin(); it != a.end(); ++it)
-        cout << *it << " ";
-    cout << endl;
-}
 
 int partition(vector<int> &A, int p, int r) // O(N)
 {
