@@ -91,7 +91,7 @@ void insert_sort(vector<int> &A) // best - O(N), worst - O(N^2)
         int key = A[j];
         int i = j - 1;
         // to change the order of sort invert the compare sign
-        for (; i >= 0 && A[i] < key; i--)
+        for (; i >= 0 && A[i] > key; i--)
             A[i + 1] = A[i];
         A[i + 1] = key;
     }

@@ -2,9 +2,10 @@
 #include <random>
 #include <iostream>
 
-void show_vector(const std::vector<int> a)
+template <typename T>
+void show_vector(const std::vector<T> a)
 {
-    for (std::vector<int>::const_iterator it = a.begin(); it != a.end(); ++it)
+    for (auto it = a.begin(); it != a.end(); ++it)
         std::cout << *it << " ";
     std::cout << std::endl;
 }
