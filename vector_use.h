@@ -1,3 +1,6 @@
+#ifndef VECTOR_USE
+#define VECTOR_USE
+
 #include <vector>
 #include <random>
 #include <iostream>
@@ -17,3 +20,5 @@ int rand_ab(int a, int b)
 
     return a + rand() % (b - a + 1);
 }
+
+#endif

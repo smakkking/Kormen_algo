@@ -1,6 +1,9 @@
+#ifndef CH5
+#define CH5
+
 #include <random>
 #include <iostream>
-#include "vector_use.cpp"
+#include "vector_use.h"
 
 using namespace std;
 
@@ -96,7 +99,4 @@ int random_search(const vector<int> V, int value)
     return -1;
 }
 
-int main()
-{
-    return 0;
-}
+#endif

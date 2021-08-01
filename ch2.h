@@ -1,6 +1,9 @@
+#ifndef CH2
+#define CH2
+
 #include <vector>
 #include <iostream>
-#include "vector_use.cpp"
+#include "vector_use.h"
 
 using namespace std;
 
@@ -167,3 +170,5 @@ int main(void)
     show_vector(T);
     return 0;
 }
+
+#endif

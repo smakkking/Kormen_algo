@@ -1,6 +1,9 @@
+#ifndef CH7
+#define CH7
+
 #include <iostream>
 #include <vector>
-#include "vector_use.cpp"
+#include "vector_use.h"
 
 using namespace std;
 
@@ -129,7 +132,4 @@ void fuzzy_sort(vector<interval> &A, int p, int r)
     }
 }
 
-int main(void)
-{
-    vector<interval> T = {interval(5, 6), interval(1, 3)};
-}
+#endif

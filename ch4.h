@@ -1,3 +1,6 @@
+#ifndef CH4
+#define CH4
+
 #include <iostream>
 #include <vector>
 #include <ctime>
@@ -409,18 +412,4 @@ MATRIX<int> Shtrassen(MATRIX<int> A, MATRIX<int> B, int N)
     }
 }
 
-int main(void)
-{
-    const int N = 4;
-    MATRIX<int> A(N, N), B(N, N);
-
-    for (int i = 0; i < N; i++)
-        A.SetMij(i, i, 1);
-
-    for (int i = 0; i < N; i++)
-        for (int j = 0; j < N; j++)
-            B.SetMij(i, j, i * i - j * j);
-
-    Shtrassen(A, B, N).Print("C");
-    return 0;
-}
+#endif

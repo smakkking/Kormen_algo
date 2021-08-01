@@ -1,4 +1,7 @@
-#include "vector_use.cpp"
+#ifndef CH8
+#define CH8
+
+#include "vector_use.h"
 #include <vector>
 #include <iostream>
 #include <math.h>
@@ -221,10 +224,4 @@ namespace task_8_3
     }
 };
 
-int main(void)
-{
-    vector<int> T = {10, 9, 8, 7, 6, 5, 4};
-    task_8_3::sort(T, 8);
-    show_vector(T);
-    return 0;
-}
+#endif

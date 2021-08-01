@@ -1,7 +1,10 @@
+#ifndef CH6
+#define CH6
+
 #include <iostream>
 #include <vector>
 #include <iterator>
-#include "vector_use.cpp"
+#include "vector_use.h"
 
 using namespace std;
 
@@ -336,12 +339,4 @@ namespace D_ary_pyramid
     }
 };
 
-int main(void)
-{
-    vector<int> B = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}, C = B;
-    D_ary_pyramid::build_max_heap(B);
-
-    show_vector(B);
-
-    return 0;
-}
+#endif
