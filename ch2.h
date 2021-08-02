@@ -163,12 +163,4 @@ void bubble_sort(vector<int> &A) // O(N^2)
             }
 }
 
-int main(void)
-{
-    vector<int> T = {2, 3, 1, 6, 4, 5, 7};
-    bubble_sort(T);
-    show_vector(T);
-    return 0;
-}
-
 #endif
