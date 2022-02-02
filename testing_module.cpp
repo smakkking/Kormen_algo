@@ -1,12 +1,20 @@
 #include <iostream>
-#include "ch9.h"
-#include "ch7.h"
+#include <vector>
 
-using namespace std;
+#include "ch11.h"
+
+int h1(int k) {
+    return k;
+}
 
 int main(void)
 {
-    vector<double> T = {0.05, 0.05, 0.1, 0.1, 0.15, 0.2, 0.35};
+    QuadroOpenHashTable<int, std::string, 11> T(h1, 1, 3);
+
+    std::string s1 = "sdgdgg", s2 = "sdgs4y75i65";
+    T.insert(4, s1);
+    T.show_table();
+    
 
     return 0;
 }
